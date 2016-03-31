@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,11 +17,36 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="7uJ-tL-2S8">
+                                <rect key="frame" x="20" y="33" width="98" height="69"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="69" id="mJb-HU-QWZ">
+                                        <variation key="heightClass=compact" constant="85"/>
+                                        <variation key="widthClass=regular" constant="96"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="98"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="98" id="wKy-rB-gFH">
+                                        <variation key="heightClass=compact" constant="120"/>
+                                        <variation key="widthClass=regular" constant="135"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="139"/>
+                                    </constraint>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7uJ-tL-2S8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="13" id="Tuc-wH-eGZ"/>
+                            <constraint firstItem="7uJ-tL-2S8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="so5-3D-iOf"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="138.75" y="306"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo" width="576" height="404"/>
+    </resources>
 </document>
