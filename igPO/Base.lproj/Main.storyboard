@@ -3,10 +3,17 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="cordia.ttf">
+            <string>CordiaNew</string>
+            <string>CordiaNew</string>
+            <string>CordiaNew</string>
+        </mutableArray>
+        <mutableArray key="cordiab.ttf">
+            <string>CordiaNew-Bold</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -20,49 +27,89 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="7uJ-tL-2S8">
-                                <rect key="frame" x="20" y="40" width="126" height="89"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K4w-wd-Ag0">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7rA-ru-ONr">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="1050"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="Aij-jt-g0C">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="1050"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.96968707679999999" green="1" blue="0.38742176789999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="Aij-jt-g0C" firstAttribute="top" secondItem="7rA-ru-ONr" secondAttribute="top" id="WXU-dm-qfU"/>
+                                            <constraint firstAttribute="trailing" secondItem="Aij-jt-g0C" secondAttribute="trailing" id="gEj-W2-djx"/>
+                                            <constraint firstItem="Aij-jt-g0C" firstAttribute="leading" secondItem="7rA-ru-ONr" secondAttribute="leading" id="lUH-Gf-sA4"/>
+                                            <constraint firstAttribute="bottom" secondItem="Aij-jt-g0C" secondAttribute="bottom" id="n2w-gi-KB1"/>
+                                            <constraint firstAttribute="height" constant="1050" id="snF-Ma-ZEE"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="89" id="mJb-HU-QWZ">
-                                        <variation key="heightClass=compact" constant="85"/>
-                                        <variation key="widthClass=regular" constant="96"/>
-                                        <variation key="heightClass=regular-widthClass=regular" constant="63"/>
-                                    </constraint>
-                                    <constraint firstAttribute="width" constant="126" id="wKy-rB-gFH">
-                                        <variation key="heightClass=compact" constant="120"/>
-                                        <variation key="widthClass=regular" constant="135"/>
-                                        <variation key="heightClass=regular-widthClass=regular" constant="90"/>
-                                    </constraint>
+                                    <constraint firstItem="7rA-ru-ONr" firstAttribute="leading" secondItem="K4w-wd-Ag0" secondAttribute="leading" id="RCC-ao-6Vp"/>
+                                    <constraint firstAttribute="trailing" secondItem="7rA-ru-ONr" secondAttribute="trailing" id="etQ-RE-gNk"/>
+                                    <constraint firstAttribute="bottom" secondItem="7rA-ru-ONr" secondAttribute="bottom" id="pvJ-fo-Ld0"/>
+                                    <constraint firstItem="7rA-ru-ONr" firstAttribute="top" secondItem="K4w-wd-Ag0" secondAttribute="top" id="xZ6-vx-3o4"/>
                                 </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="inscription" translatesAutoresizingMaskIntoConstraints="NO" id="3wg-lw-SKa">
-                                <rect key="frame" x="427" y="47" width="153" height="55"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="3wg-lw-SKa" secondAttribute="height" multiplier="153:55" id="Ms0-A4-7AL"/>
-                                </constraints>
-                            </imageView>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="3wg-lw-SKa" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.0016" constant="152" id="KU9-o0-fve"/>
-                            <constraint firstItem="7uJ-tL-2S8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="Tuc-wH-eGZ">
-                                <variation key="heightClass=regular-widthClass=regular" constant="39"/>
-                            </constraint>
-                            <constraint firstItem="3wg-lw-SKa" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="27" id="d32-gY-9ys"/>
-                            <constraint firstItem="7uJ-tL-2S8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="so5-3D-iOf">
-                                <variation key="heightClass=regular-widthClass=regular" constant="12"/>
-                            </constraint>
-                            <constraint firstItem="3wg-lw-SKa" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="yyE-0f-Y2h"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="K4w-wd-Ag0" secondAttribute="bottom" id="IIO-We-MqK"/>
+                            <constraint firstItem="7rA-ru-ONr" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Mra-ob-Iim"/>
+                            <constraint firstItem="K4w-wd-Ag0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="PxP-ub-EzE"/>
+                            <constraint firstAttribute="trailing" secondItem="K4w-wd-Ag0" secondAttribute="trailing" id="kEb-B9-TfM"/>
+                            <constraint firstItem="K4w-wd-Ag0" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="sBB-fk-Dkb"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" id="GO5-Ww-t9x">
+                    <rect key="frame" x="0.0" y="0.0" width="91" height="63"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inscription à la soirée des portes ouvertes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1gf-Mq-TNh">
+                    <rect key="frame" x="0.0" y="0.0" width="306" height="23"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="CordiaNew-Bold" family="Cordia New" pointSize="24"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="400" placeholderIntrinsicHeight="110" axis="vertical" spacing="10" id="4vS-Ct-KEg">
+                    <rect key="frame" x="0.0" y="0.0" width="400" height="110"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="NOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VRg-Op-twC">
+                            <rect key="frame" x="0.0" y="0.0" width="400" height="30"/>
+                            <fontDescription key="fontDescription" name="CordiaNew" family="Cordia New" pointSize="17"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="TÉLÉPHONE" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="htQ-Bm-AWk">
+                            <rect key="frame" x="0.0" y="40" width="400" height="30"/>
+                            <fontDescription key="fontDescription" name="CordiaNew" family="Cordia New" pointSize="17"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="COURRIEL" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pTU-u3-Gko">
+                            <rect key="frame" x="0.0" y="80" width="400" height="30"/>
+                            <fontDescription key="fontDescription" name="CordiaNew" family="Cordia New" pointSize="17"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="eb1-lG-Rbo">
+                    <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" image="case.png"/>
+                </button>
             </objects>
-            <point key="canvasLocation" x="138" y="306"/>
+            <point key="canvasLocation" x="160" y="258"/>
         </scene>
     </scenes>
     <resources>
-        <image name="inscription" width="555" height="200"/>
-        <image name="logo" width="576" height="404"/>
+        <image name="Image" width="600" height="600"/>
+        <image name="case.png" width="96" height="96"/>
+        <image name="logo.png" width="266" height="185"/>
     </resources>
 </document>
