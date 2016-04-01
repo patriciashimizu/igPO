@@ -3,7 +3,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -19,34 +21,48 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="7uJ-tL-2S8">
-                                <rect key="frame" x="20" y="33" width="98" height="69"/>
+                                <rect key="frame" x="20" y="40" width="126" height="89"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="69" id="mJb-HU-QWZ">
+                                    <constraint firstAttribute="height" constant="89" id="mJb-HU-QWZ">
                                         <variation key="heightClass=compact" constant="85"/>
                                         <variation key="widthClass=regular" constant="96"/>
-                                        <variation key="heightClass=regular-widthClass=regular" constant="98"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="63"/>
                                     </constraint>
-                                    <constraint firstAttribute="width" constant="98" id="wKy-rB-gFH">
+                                    <constraint firstAttribute="width" constant="126" id="wKy-rB-gFH">
                                         <variation key="heightClass=compact" constant="120"/>
                                         <variation key="widthClass=regular" constant="135"/>
-                                        <variation key="heightClass=regular-widthClass=regular" constant="139"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="90"/>
                                     </constraint>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="inscription" translatesAutoresizingMaskIntoConstraints="NO" id="3wg-lw-SKa">
+                                <rect key="frame" x="427" y="47" width="153" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="3wg-lw-SKa" secondAttribute="height" multiplier="153:55" id="Ms0-A4-7AL"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="7uJ-tL-2S8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="13" id="Tuc-wH-eGZ"/>
-                            <constraint firstItem="7uJ-tL-2S8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="so5-3D-iOf"/>
+                            <constraint firstItem="3wg-lw-SKa" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.0016" constant="152" id="KU9-o0-fve"/>
+                            <constraint firstItem="7uJ-tL-2S8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="Tuc-wH-eGZ">
+                                <variation key="heightClass=regular-widthClass=regular" constant="39"/>
+                            </constraint>
+                            <constraint firstItem="3wg-lw-SKa" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="27" id="d32-gY-9ys"/>
+                            <constraint firstItem="7uJ-tL-2S8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="so5-3D-iOf">
+                                <variation key="heightClass=regular-widthClass=regular" constant="12"/>
+                            </constraint>
+                            <constraint firstItem="3wg-lw-SKa" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="yyE-0f-Y2h"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138.75" y="306"/>
+            <point key="canvasLocation" x="138" y="306"/>
         </scene>
     </scenes>
     <resources>
+        <image name="inscription" width="555" height="200"/>
         <image name="logo" width="576" height="404"/>
     </resources>
 </document>

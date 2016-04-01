@@ -13,6 +13,7 @@
 		07040CE01CAD916400AA29C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07040CDF1CAD916400AA29C6 /* Assets.xcassets */; };
 		07040CE31CAD916400AA29C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07040CE11CAD916400AA29C6 /* LaunchScreen.storyboard */; };
 		07040CEB1CAD934600AA29C6 /* logo.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 07040CEA1CAD934600AA29C6 /* logo.pdf */; };
+		07DB6DD01CADAF8C00105FBE /* inscription.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 07DB6DCF1CADAF8C00105FBE /* inscription.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		07040CE21CAD916400AA29C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07040CE41CAD916400AA29C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07040CEA1CAD934600AA29C6 /* logo.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = logo.pdf; path = Images/logo.pdf; sourceTree = "<group>"; };
+		07DB6DCF1CADAF8C00105FBE /* inscription.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = inscription.pdf; path = Images/inscription.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 		07040CEC1CAD935300AA29C6 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				07DB6DCF1CADAF8C00105FBE /* inscription.pdf */,
 				07040CEA1CAD934600AA29C6 /* logo.pdf */,
 			);
 			name = images;
@@ -137,6 +140,7 @@
 				07040CEB1CAD934600AA29C6 /* logo.pdf in Resources */,
 				07040CE01CAD916400AA29C6 /* Assets.xcassets in Resources */,
 				07040CDE1CAD916400AA29C6 /* Main.storyboard in Resources */,
+				07DB6DD01CADAF8C00105FBE /* inscription.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +304,7 @@
 				07040CE91CAD916400AA29C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
