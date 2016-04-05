@@ -106,7 +106,7 @@ class ViewController: UIViewController
         
         let progs = self.manageSelectedPrograms()
         
-        let stringToSend = "name=\(self.name.text!)&phone=\(self.phone.text!)&email=\(self.email.text!)&how=\(self.how.text!)&progs=\(progs)"
+        let stringToSend = "name=NOM : \(self.name.text!)&phone=TÉLÉPHONE : \(self.phone.text!)&email=COURRIEL : \(self.email.text!)&how=COMMENT NOUS AVOIR TROUVÉS : \(self.how.text!)&progs=PROGRAMMES INTÉRESSÉS : \n\(progs)"
         //self.jsonManager.upload(stringToSend, urlForAdding: "http://localhost/xampp/geneau/ig_po/php/add.php")
         self.jsonManager.upload(stringToSend, urlForAdding: "http://www.igweb.tv/ig_po/php/add.php")
         self.clearFields()
@@ -128,6 +128,12 @@ class ViewController: UIViewController
         self.phone.text = ""
         self.email.text = ""
         self.how.text = ""
+    }
+    /* ---------------------------------------*/
+    func textFieldShouldReturn(textField: UITextField!) -> Bool
+    {
+        textField.resignFirstResponder()
+        return true
     }
     /* ---------------------------------------*/
 }
