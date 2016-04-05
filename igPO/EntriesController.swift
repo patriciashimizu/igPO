@@ -42,27 +42,27 @@ class EntriesController: UIViewController
         
         if let theLabel = cell.viewWithTag(200) as? UILabel
         {
-            theLabel.text = self.names[indexPath.row]
+            theLabel.text = "NOM : \(self.names[indexPath.row])"
         }
         
         if let theLabel = cell.viewWithTag(201) as? UILabel
         {
-            theLabel.text = self.phones[indexPath.row]
+            theLabel.text = "TÉLÉPHONE : \(self.phones[indexPath.row])"
         }
         
         if let theLabel = cell.viewWithTag(202) as? UILabel
         {
-            theLabel.text = self.emails[indexPath.row]
+            theLabel.text = "COURRIEL : \(self.emails[indexPath.row])"
         }
         
         if let theLabel = cell.viewWithTag(203) as? UILabel
         {
-            theLabel.text = self.hows[indexPath.row]
+            theLabel.text = "COMMENT AVOIR ENTENDU PARLÉ DE NOUS : \(self.hows[indexPath.row])"
         }
         
         if let theTextView = cell.viewWithTag(204) as? UITextView
         {
-            theTextView.text = self.progs[indexPath.row]
+            theTextView.text = "INTÉRESSÉ PAR LES PROGRAMMES : \n\(self.progs[indexPath.row])"
         }
         
         cell.textLabel?.textColor = UIColor.whiteColor()

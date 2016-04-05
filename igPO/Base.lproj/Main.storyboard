@@ -40,6 +40,10 @@
             <string>CordiaNew-Bold</string>
             <string>CordiaNew-Bold</string>
             <string>CordiaNew-Bold</string>
+            <string>CordiaNew-Bold</string>
+            <string>CordiaNew-Bold</string>
+            <string>CordiaNew-Bold</string>
+            <string>CordiaNew-Bold</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -826,10 +830,13 @@
                                     <constraint firstAttribute="height" constant="30" id="1mz-Mr-TF9"/>
                                     <constraint firstAttribute="width" constant="140" id="jSM-pG-wt6"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                <state key="normal">
+                                <fontDescription key="fontDescription" name="CordiaNew-Bold" family="Cordia New" pointSize="22"/>
+                                <state key="normal" title="TÉLÉPHONES">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonsForFiltering:" destination="fEO-y0-p40" eventType="touchUpInside" id="0lm-yZ-zmo"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFW-dX-Ube">
                                 <rect key="frame" x="420" y="550" width="140" height="30"/>
@@ -838,10 +845,13 @@
                                     <constraint firstAttribute="width" constant="140" id="6GX-H0-yBP"/>
                                     <constraint firstAttribute="height" constant="30" id="wt5-UP-1sw"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                <state key="normal">
+                                <fontDescription key="fontDescription" name="CordiaNew-Bold" family="Cordia New" pointSize="22"/>
+                                <state key="normal" title="COMMENT">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonsForFiltering:" destination="fEO-y0-p40" eventType="touchUpInside" id="hRY-mN-ca5"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QuK-t9-Wdg">
                                 <rect key="frame" x="40" y="122" width="520" height="365"/>
@@ -858,10 +868,13 @@
                                     <constraint firstAttribute="width" constant="140" id="P7c-0j-Ewq"/>
                                     <constraint firstAttribute="height" constant="30" id="mZw-qJ-wJc"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                <state key="normal">
+                                <fontDescription key="fontDescription" name="CordiaNew-Bold" family="Cordia New" pointSize="22"/>
+                                <state key="normal" title="NOMS">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonsForFiltering:" destination="fEO-y0-p40" eventType="touchUpInside" id="2Y1-eE-Eqp"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6f-vD-36q">
                                 <rect key="frame" x="272" y="550" width="140" height="30"/>
@@ -870,10 +883,13 @@
                                     <constraint firstAttribute="height" constant="30" id="0FX-sz-b69"/>
                                     <constraint firstAttribute="width" constant="140" id="mLD-fO-VyR"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                <state key="normal">
+                                <fontDescription key="fontDescription" name="CordiaNew-Bold" family="Cordia New" pointSize="22"/>
+                                <state key="normal" title="COURRIELS">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonsForFiltering:" destination="fEO-y0-p40" eventType="touchUpInside" id="Dwx-69-pSR"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.57975206069999996" blue="0.6755928457" alpha="1" colorSpace="calibratedRGB"/>
@@ -900,6 +916,9 @@
                             <constraint firstItem="cFW-dX-Ube" firstAttribute="leading" secondItem="c6f-vD-36q" secondAttribute="trailing" constant="8" id="ycf-2k-eFa"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cvsTextView" destination="QuK-t9-Wdg" id="i5X-wl-WDM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VoN-Cf-ar0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -913,6 +932,6 @@
         <image name="save.png" width="519" height="133"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="34R-z7-7Gr"/>
+        <segue reference="j4B-cy-Ahn"/>
     </inferredMetricsTieBreakers>
 </document>

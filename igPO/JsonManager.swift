@@ -73,6 +73,47 @@ class JsonManager
         return arrayForData
     }
     /* ------------------------------------- */
+    func converJsonToCsv(fieldNamesSeperatedByComas: String) -> String
+    {
+        var CSV: String = "\(fieldNamesSeperatedByComas)\n"
+        
+        for (a, b) in self.jsonParsed
+        {
+            var newString = "\""
+            newString +=  a as! String
+            newString += "\""
+            CSV += newString + ","
+            
+            for c in 0 ..< (b as! NSArray).count
+            {
+                var newString = "\""
+                newString +=  ((b as! NSArray)[c] as! String)
+                newString += "\""
+                CSV += newString + ","
+            }
+            
+            CSV = CSV.substringToIndex(CSV.endIndex.predecessor())
+            CSV += "\n"
+        }
+        
+        return CSV.substringToIndex(CSV.endIndex.predecessor())
+    }
+    /* ------------------------------------- */
+    func filter(index: Int, title: String) -> String
+    {
+        var strToDisplay = "\(title) :\n"
+        
+        for (_, b) in self.jsonParsed
+        {
+            if (b.objectAtIndex(index) as! String) != ""
+            {
+                strToDisplay += "\t. \(b.objectAtIndex(index) as! String)\n"
+            }
+        }
+        
+        return strToDisplay
+    }
+    /* ------------------------------------- */
 }
 /*==================================*/
 
