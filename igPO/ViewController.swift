@@ -19,7 +19,7 @@ class ViewController: UIViewController
         "DEC - Techniques de l’informatique, programmation nouveaux médias (420.AO)",
         "DEC - Technique de l’estimation en bâtiment (221.DA)",
         "DEC - Techniques de l’évaluation en bâtiment (221.DB)",
-        "AEC - Techniques d’inspection en bâtiment (13)",
+        "AEC - Techniques d’inspection en bâtiment (EEC.13)",
         "AEC - Métré pour l’estimation en construction (EEC.00)",
         "AEC - Sécurité industrielle et commerciale (LCA.5Q)"]
     //let jsonManager = JsonManager(urlToJsonFile: "http://localhost/xampp/geneau/ig_po/json/data.json")
@@ -54,7 +54,7 @@ class ViewController: UIViewController
             }
         }
         
-        // Delete 2 last characters of string...
+        // Delete 3 last characters of string...
         if stringToReturn != ""
         {
             stringToReturn = stringToReturn.substringToIndex(stringToReturn.endIndex.predecessor())

@@ -5,7 +5,8 @@ class CSVController: UIViewController
 {
     @IBOutlet weak var cvsTextView: UITextView!
     /* ---------------------------------------*/
-    let jsonManager = JsonManager(urlToJsonFile: "http://www.igweb.tv/ig_po/json/data.json")
+    var jsonManager = JsonManager(urlToJsonFile: "http://www.igweb.tv/ig_po/json/data.json")
+    var listOfSelectedPrograms: [Int] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     /* ---------------------------------------*/
     override func viewDidLoad()
     {
@@ -38,10 +39,79 @@ class CSVController: UIViewController
         case "TÉLÉPHONES" : self.cvsTextView.text = self.jsonManager.filter(0, title: "Téléphones")
         case "COURRIELS" : self.cvsTextView.text = self.jsonManager.filter(1, title: "Courriels")
         case "COMMENT" : self.cvsTextView.text = self.jsonManager.filter(2, title: "Comment avoir entendu parlé de nous")
+        case "PARTICIPANTS" : self.cvsTextView.text = "PARTICIPANTS :\n\t\(self.jsonManager.jsonParsed.count) participants inscrits aux portes ouvertes."
             
         default : print("Not found...")
         }
     }
     /* ---------------------------------------*/
+    @IBAction func programInterests(sender: UIButton)
+    {
+        let arrProgramNames: [String] = [
+            "DEC - Techniques de production et postproduction télévisuelles (574.AB)",
+            "AEC - Production télévisuelle et cinématographique (NWY.15)",
+            "AEC - Techniques de montage et d’habillage infographique (NWY.00)",
+            "DEC - Techniques d’animation 3D et synthèse d’images (574.BO)",
+            "AEC - Production 3D pour jeux vidéo (NTL.12)",
+            "AEC - Animation 3D et effets spéciaux (NTL.06)",
+            "DEC - Techniques de l’informatique, programmation nouveaux médias (420.AO)",
+            "DEC - Technique de l’estimation en bâtiment (221.DA)",
+            "DEC - Techniques de l’évaluation en bâtiment (221.DB)",
+            "AEC - Techniques d’inspection en bâtiment (EEC.13)",
+            "AEC - Métré pour l’estimation en construction (EEC.00)",
+            "AEC - Sécurité industrielle et commerciale (LCA.5Q)"]
+        
+        for index in 0 ..< arrProgramNames.count
+        {
+            let s = ". \(arrProgramNames[index])"
+            
+            for (_, b) in self.jsonManager.jsonParsed
+            {
+                if s == b.objectAtIndex(3) as! String
+                {
+                    self.listOfSelectedPrograms[index] += 1
+                }
+            }
+        }
+        
+        var s: String = "INTÉRÊT DES PROGRAMMES : \n\n"
+        
+        for index in 0 ..< arrProgramNames.count
+        {
+            s += "\t. \(self.listOfSelectedPrograms[index]) = \(arrProgramNames[index])\n"
+        }
+        
+        self.cvsTextView.text = s
+    }
+    /* ---------------------------------------*/
+    @IBAction func reset(sender: UIButton)
+    {
+        let refreshAlert = UIAlertController(title: "Réinialisation", message: "Vous voulez vraiment tout réinitialiser?", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        refreshAlert.addAction(UIAlertAction(title: "Oui", style: .Default, handler: { (action: UIAlertAction!) in
+            self.reallyDoReset()
+        }))
+        
+        refreshAlert.addAction(UIAlertAction(title: "Non", style: .Default, handler: { (action: UIAlertAction!) in
+        }))
+        
+        presentViewController(refreshAlert, animated: true, completion: nil)
+    }
+    /* ---------------------------------------*/
+    func reallyDoReset()
+    {
+        self.jsonManager.upload("delete=reset", urlForAdding: "http://www.igweb.tv/ig_po/php/delete.php")
+        self.cvsTextView.text = ""
+        self.jsonManager = JsonManager(urlToJsonFile: "http://www.igweb.tv/ig_po/json/data.json")
+    }
+    /* ---------------------------------------*/
 }
 //=================================
+
+
+
+
+
+
+
+

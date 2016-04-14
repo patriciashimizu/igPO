@@ -74,7 +74,7 @@ class EntriesController: UIViewController
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
         let selectedCell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
-        selectedCell.contentView.backgroundColor = UIColor.darkGrayColor()
+        selectedCell.contentView.backgroundColor = UIColor.lightGrayColor()
     }
     /* ---------------------------------------*/
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath)
