@@ -3,10 +3,14 @@ import UIKit
 //=================================
 class ViewController: UIViewController
 {
+    /* ---------------------------------------*/
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var phone: UITextField!
     @IBOutlet weak var email: UITextField!
-    @IBOutlet weak var how: UITextField!
+    @IBOutlet weak var myPicker: UIPickerView!
+    /* ---------------------------------------*/
+    let publicity: [String] = ["--- Nous avoir trouvés? ---", "Amis / Famille", "Radio", "Publicité Internet", "Journaux", "Moteur de recherche", "Médias sociaux", "Télévision", "Autres"]
+    var pickerChoice: String = ""
     /* ---------------------------------------*/
     var arrForButtonManagement: [Bool] = []
     let arrProgramNames: [String] = [
@@ -106,7 +110,7 @@ class ViewController: UIViewController
         
         let progs = self.manageSelectedPrograms()
         
-        let stringToSend = "name=\(self.name.text!)&phone=\(self.phone.text!)&email=\(self.email.text!)&how=\(self.how.text!)&progs=\(progs)"
+        let stringToSend = "name=\(self.name.text!)&phone=\(self.phone.text!)&email=\(self.email.text!)&how=\(self.pickerChoice)&progs=\(progs)"
         //self.jsonManager.upload(stringToSend, urlForAdding: "http://localhost/xampp/geneau/ig_po/php/add.php")
         self.jsonManager.upload(stringToSend, urlForAdding: "http://www.igweb.tv/ig_po/php/add.php")
         self.clearFields()
@@ -127,13 +131,34 @@ class ViewController: UIViewController
         self.name.text = ""
         self.phone.text = ""
         self.email.text = ""
-        self.how.text = ""
+        
+        self.myPicker.selectRow(0, inComponent: 0, animated: true)
     }
     /* ---------------------------------------*/
     func textFieldShouldReturn(textField: UITextField!) -> Bool
     {
         textField.resignFirstResponder()
         return true
+    }
+    /* ---------------------------------------*/
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int
+    {
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
+    {
+        return self.publicity.count
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String!
+    {
+        return self.publicity[row]
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+    {
+        self.pickerChoice  = self.publicity[row]
     }
     /* ---------------------------------------*/
 }
