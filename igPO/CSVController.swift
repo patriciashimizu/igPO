@@ -7,6 +7,7 @@ class CSVController: UIViewController
     /* ---------------------------------------*/
     var jsonManager = JsonManager(urlToJsonFile: "http://www.igweb.tv/ig_po/json/data.json")
     var listOfSelectedPrograms: [Int] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    var listOfMedias: [Int] = [0, 0, 0, 0, 0, 0, 0, 0, 0]
     /* ---------------------------------------*/
     override func viewDidLoad()
     {
@@ -27,26 +28,28 @@ class CSVController: UIViewController
         
         switch sender.currentTitle!
         {
-        case "NOMS" :
-            strToDisplay = "Noms :\n"
-            for (a, _) in self.jsonManager.jsonParsed
-            {
-                strToDisplay += "\t. \(a)\n"
-            }
-            
-            self.cvsTextView.text = strToDisplay
-            
-        case "TÉLÉPHONES" : self.cvsTextView.text = self.jsonManager.filter(0, title: "Téléphones")
-        case "COURRIELS" : self.cvsTextView.text = self.jsonManager.filter(1, title: "Courriels")
-        case "COMMENT" : self.cvsTextView.text = self.jsonManager.filter(2, title: "Comment avoir entendu parlé de nous")
-        case "PARTICIPANTS" : self.cvsTextView.text = "PARTICIPANTS :\n\t\(self.jsonManager.jsonParsed.count) participants inscrits aux portes ouvertes."
-            
-        default : print("Not found...")
+            case "NOMS" :
+                strToDisplay = "Noms :\n"
+                for (a, _) in self.jsonManager.jsonParsed
+                {
+                    strToDisplay += "\t. \(a)\n"
+                }
+                
+                self.cvsTextView.text = strToDisplay
+                
+            case "TÉLÉPHONES" : self.cvsTextView.text = self.jsonManager.filter(0, title: "Téléphones")
+            case "COURRIELS" : self.cvsTextView.text = self.jsonManager.filter(1, title: "Courriels")
+            case "MÉDIAS" : self.mostEfficientMedia()
+            case "PARTICIPANTS" : self.cvsTextView.text = "PARTICIPANTS :\n\t\(self.jsonManager.jsonParsed.count) participants inscrits aux portes ouvertes."
+                
+            default : print("Not found...")
         }
     }
     /* ---------------------------------------*/
     @IBAction func programInterests(sender: UIButton)
     {
+        self.listOfSelectedPrograms = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
         let arrProgramNames: [String] = [
             "DEC - Techniques de production et postproduction télévisuelles (574.AB)",
             "AEC - Production télévisuelle et cinématographique (NWY.15)",
@@ -79,6 +82,44 @@ class CSVController: UIViewController
         for index in 0 ..< arrProgramNames.count
         {
             s += "\t. \(self.listOfSelectedPrograms[index]) = \(arrProgramNames[index])\n"
+        }
+        
+        self.cvsTextView.text = s
+    }
+    /* ---------------------------------------*/
+    func mostEfficientMedia()
+    {
+        self.listOfMedias = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+        
+        let arrMedias: [String] = [
+            "Aucune réponse",
+            "Amis / Famille",
+            "Radio",
+            "Publicité Internet",
+            "Journaux",
+            "Moteur de recherche",
+            "Médias sociaux",
+            "Télévision",
+            "Autres"]
+        
+        for index in 0 ..< arrMedias.count
+        {
+            let s = "\(arrMedias[index])"
+            
+            for (_, b) in self.jsonManager.jsonParsed
+            {
+                if s == b.objectAtIndex(2) as! String
+                {
+                    self.listOfMedias[index] += 1
+                }
+            }
+        }
+        
+        var s: String = "EFFICACITÉ DES MÉDIAS : \n\n"
+        
+        for index in 0 ..< arrMedias.count
+        {
+            s += "\t. \(self.listOfMedias[index]) = \(arrMedias[index])\n"
         }
         
         self.cvsTextView.text = s

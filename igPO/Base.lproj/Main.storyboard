@@ -810,13 +810,13 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFW-dX-Ube">
-                                <rect key="frame" x="447" y="550" width="135" height="30"/>
+                                <rect key="frame" x="447" y="549" width="135" height="32"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="oXU-Kb-KxN"/>
+                                    <constraint firstAttribute="height" constant="32" id="oXU-Kb-KxN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="CordiaNew-Bold" family="Cordia New" pointSize="18"/>
-                                <state key="normal" title="COMMENT">
+                                <state key="normal" title="MÉDIAS">
                                     <color key="titleColor" red="0.0061955091139999996" green="0.40543733949999999" blue="0.41088474679999998" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -905,7 +905,7 @@
                         <color key="backgroundColor" red="0.0" green="0.57975206069999996" blue="0.6755928457" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="vNl-lP-xah" firstAttribute="leading" secondItem="c6f-vD-36q" secondAttribute="leading" id="0k0-eh-fdx"/>
-                            <constraint firstItem="RuQ-YQ-jGX" firstAttribute="top" secondItem="cFW-dX-Ube" secondAttribute="bottom" constant="20" id="74U-zO-8U3"/>
+                            <constraint firstItem="RuQ-YQ-jGX" firstAttribute="top" secondItem="cFW-dX-Ube" secondAttribute="bottom" constant="19" id="74U-zO-8U3"/>
                             <constraint firstItem="c6f-vD-36q" firstAttribute="leading" secondItem="bsC-Tb-z32" secondAttribute="trailing" constant="8.5" id="7Oa-fR-mkQ"/>
                             <constraint firstAttribute="trailing" secondItem="DmH-Rf-dnF" secondAttribute="trailing" id="8BI-eo-xsv"/>
                             <constraint firstItem="gwr-s0-uMd" firstAttribute="leading" secondItem="edY-Nk-OUC" secondAttribute="trailing" constant="8" id="AIG-Ug-dIV"/>
@@ -918,7 +918,7 @@
                             <constraint firstItem="DmH-Rf-dnF" firstAttribute="leading" secondItem="DYO-hT-UfJ" secondAttribute="leading" id="KxX-4n-XIc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="QuK-t9-Wdg" secondAttribute="trailing" constant="20" id="Lxx-e6-2bP"/>
                             <constraint firstItem="c6f-vD-36q" firstAttribute="top" secondItem="vNl-lP-xah" secondAttribute="bottom" constant="8" id="MBT-hU-aTV"/>
-                            <constraint firstItem="cFW-dX-Ube" firstAttribute="top" secondItem="2O3-Pk-Knj" secondAttribute="bottom" constant="8" id="NfT-nv-4Bv"/>
+                            <constraint firstItem="cFW-dX-Ube" firstAttribute="top" secondItem="2O3-Pk-Knj" secondAttribute="bottom" constant="7" id="NfT-nv-4Bv"/>
                             <constraint firstItem="vNl-lP-xah" firstAttribute="width" secondItem="c6f-vD-36q" secondAttribute="width" id="Nue-9J-YTA"/>
                             <constraint firstItem="bsC-Tb-z32" firstAttribute="width" secondItem="DYO-hT-UfJ" secondAttribute="width" multiplier="0.225" id="UlG-Dn-MgN"/>
                             <constraint firstItem="cFW-dX-Ube" firstAttribute="width" secondItem="c6f-vD-36q" secondAttribute="width" id="V3x-Mo-nwS"/>
@@ -955,6 +955,6 @@
         <image name="save.png" width="519" height="133"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="j4B-cy-Ahn"/>
+        <segue reference="34R-z7-7Gr"/>
     </inferredMetricsTieBreakers>
 </document>
