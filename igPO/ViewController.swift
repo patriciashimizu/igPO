@@ -7,9 +7,8 @@ class ViewController: UIViewController
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var phone: UITextField!
     @IBOutlet weak var email: UITextField!
-    @IBOutlet weak var myPicker: UIPickerView!
     /* ---------------------------------------*/
-    let publicity: [String] = ["--- Nous avoir trouvés? ---", "Amis / Famille", "Radio", "Publicité Internet", "Journaux", "Moteur de recherche", "Médias sociaux", "Télévision", "Autres"]
+    let publicity: [String] = ["Amis / Famille", "Radio", "Publicité Internet", "Journaux", "Moteur de recherche", "Médias sociaux", "Télévision", "Autres"]
     var pickerChoice: String = ""
     /* ---------------------------------------*/
     var arrForButtonManagement: [Bool] = []
@@ -131,8 +130,6 @@ class ViewController: UIViewController
         self.name.text = ""
         self.phone.text = ""
         self.email.text = ""
-        
-        self.myPicker.selectRow(0, inComponent: 0, animated: true)
     }
     /* ---------------------------------------*/
     func textFieldShouldReturn(textField: UITextField!) -> Bool
