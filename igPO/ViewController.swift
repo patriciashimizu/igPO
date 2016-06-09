@@ -7,9 +7,17 @@ class ViewController: UIViewController
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var phone: UITextField!
     @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var amis: UIButton!
+    @IBOutlet weak var radio: UIButton!
+    @IBOutlet weak var pub_internet: UIButton!
+    @IBOutlet weak var journaux: UIButton!
+    @IBOutlet weak var moteur: UIButton!
+    @IBOutlet weak var sociaux: UIButton!
+    @IBOutlet weak var tv: UIButton!
+    @IBOutlet weak var autres: UIButton!
     /* ---------------------------------------*/
-    let publicity: [String] = ["Amis / Famille", "Radio", "Publicité Internet", "Journaux", "Moteur de recherche", "Médias sociaux", "Télévision", "Autres"]
     var pickerChoice: String = ""
+    var arrMediaButtons:[UIButton]!
     /* ---------------------------------------*/
     var arrForButtonManagement: [Bool] = []
     let arrProgramNames: [String] = [
@@ -32,6 +40,8 @@ class ViewController: UIViewController
     {
         super.viewDidLoad()
         
+        arrMediaButtons = [amis, radio, pub_internet, journaux, moteur, sociaux, tv, autres]
+        
         jsonManager.importJSON()
         
         fillUpArray()
@@ -49,11 +59,11 @@ class ViewController: UIViewController
     {
         var stringToReturn: String = ". "
         
-        for x in 0 ..< self.arrProgramNames.count
+        for x in 0 ..< arrProgramNames.count
         {
-            if self.arrForButtonManagement[x]
+            if arrForButtonManagement[x]
             {
-                stringToReturn += self.arrProgramNames[x] + "\n. "
+                stringToReturn += arrProgramNames[x] + "\n. "
             }
         }
         
@@ -80,41 +90,49 @@ class ViewController: UIViewController
         if !arrForButtonManagement[buttonIndexInArray]
         {
             sender.setImage(UIImage(named: "case_select.png"), forState: UIControlState.Normal)
-            self.arrForButtonManagement[buttonIndexInArray] = true
+            arrForButtonManagement[buttonIndexInArray] = true
         }
         else
         {
             sender.setImage(UIImage(named: "case.png"), forState: UIControlState.Normal)
-            self.arrForButtonManagement[buttonIndexInArray] = false
+            arrForButtonManagement[buttonIndexInArray] = false
         }
     }
     /* ---------------------------------------*/
     func deselectAllButtons()
     {
-        for x in 0 ..< self.arrForButtonManagement.count
+        for x in 0 ..< arrForButtonManagement.count
         {
-            self.arrForButtonManagement[x] = false
-            let aButton: UIButton = (self.view.viewWithTag(100 + x) as? UIButton)!
+            arrForButtonManagement[x] = false
+            let aButton: UIButton = (view.viewWithTag(100 + x) as? UIButton)!
             aButton.setImage(UIImage(named: "case.png"), forState: UIControlState.Normal)
         }
     }
     /* ---------------------------------------*/
     @IBAction func saveInformation(sender: UIButton)
     {
-        if self.name.text == ""
+        if name.text == ""
         {
-            self.alert("Veuillez insérer votre nom...")
+            alert("Veuillez insérer votre nom...")
             return
         }
         
-        let progs = self.manageSelectedPrograms()
+        if !checkMediaSelection()
+        {
+            alert("Veuillez nous indiquer comment vous avez entendu parler de nous...")
+            return
+        }
         
-        let stringToSend = "name=\(self.name.text!)&phone=\(self.phone.text!)&email=\(self.email.text!)&how=\(self.pickerChoice)&progs=\(progs)"
-        //self.jsonManager.upload(stringToSend, urlForAdding: "http://localhost/xampp/geneau/ig_po/php/add.php")
-        self.jsonManager.upload(stringToSend, urlForAdding: "http://www.igweb.tv/ig_po/php/add.php")
-        self.clearFields()
-        self.deselectAllButtons()
-        self.alert("Les données ont été sauvegardées...")
+        let progs = manageSelectedPrograms()
+        
+        let stringToSend = "name=\(name.text!)&phone=\(phone.text!)&email=\(email.text!)&how=\(pickerChoice)&progs=\(progs)"
+        //jsonManager.upload(stringToSend, urlForAdding: "http://localhost/xampp/geneau/ig_po/php/add.php")
+        jsonManager.upload(stringToSend, urlForAdding: "http://www.igweb.tv/ig_po/php/add.php")
+        clearFields()
+        deselectAllButtons()
+        resetAllMediaButtonAlphas()
+        
+        alert("Les données ont été sauvegardées...")
     }
     /* ---------------------------------------*/
     func alert(theMessage: String)
@@ -122,14 +140,14 @@ class ViewController: UIViewController
         let refreshAlert = UIAlertController(title: "Message...", message: theMessage, preferredStyle: .Alert)
         let OKAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
         refreshAlert.addAction(OKAction)
-        self.presentViewController(refreshAlert, animated: true){}
+        presentViewController(refreshAlert, animated: true){}
     }
     /* ---------------------------------------*/
     func clearFields()
     {
-        self.name.text = ""
-        self.phone.text = ""
-        self.email.text = ""
+        name.text = ""
+        phone.text = ""
+        email.text = ""
     }
     /* ---------------------------------------*/
     func textFieldShouldReturn(textField: UITextField!) -> Bool
@@ -138,24 +156,44 @@ class ViewController: UIViewController
         return true
     }
     /* ---------------------------------------*/
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int
+    @IBAction func mediaButtons(sender: UIButton)
     {
-        return 1
+        resetAllMediaButtonAlphas()
+        
+        pickerChoice = (sender.titleLabel?.text)!
+        
+        if sender.alpha == 0.5
+        {
+            sender.alpha = 1.0
+        }
+        else
+        {
+            sender.alpha = 0.5
+        }
     }
-    
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
+    /* ---------------------------------------*/
+    func resetAllMediaButtonAlphas()
     {
-        return self.publicity.count
+        for index in 0 ..< arrMediaButtons.count
+        {
+            arrMediaButtons[index].alpha = 0.5
+        }
     }
-    
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String!
+    /* ---------------------------------------*/
+    func checkMediaSelection() -> Bool
     {
-        return self.publicity[row]
-    }
-    
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
-    {
-        self.pickerChoice  = self.publicity[row]
+        var chosen = false
+        
+        for index in 0 ..< arrMediaButtons.count
+        {
+            if arrMediaButtons[index].alpha == 1.0
+            {
+                chosen = true
+                break
+            }
+        }
+        
+        return chosen
     }
     /* ---------------------------------------*/
 }

@@ -7,7 +7,7 @@ class CSVController: UIViewController
     /* ---------------------------------------*/
     var jsonManager = JsonManager(urlToJsonFile: "http://www.igweb.tv/ig_po/json/data.json")
     var listOfSelectedPrograms: [Int] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-    var listOfMedias: [Int] = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+    var listOfMedias: [Int] = [0, 0, 0, 0, 0, 0, 0, 0]
     /* ---------------------------------------*/
     override func viewDidLoad()
     {
@@ -89,10 +89,9 @@ class CSVController: UIViewController
     /* ---------------------------------------*/
     func mostEfficientMedia()
     {
-        self.listOfMedias = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+        self.listOfMedias = [0, 0, 0, 0, 0, 0, 0, 0]
         
         let arrMedias: [String] = [
-            "Aucune réponse",
             "Amis / Famille",
             "Radio",
             "Publicité Internet",
