@@ -12,10 +12,10 @@ class JsonManager
         self.urlToJsonFile = urlToJsonFile
     }
     /* ------------------------------------- */
-    func parser(jsonFilePath: String) -> NSMutableDictionary
+    func parser(_ jsonFilePath: String) -> NSMutableDictionary
     {
-        let data = NSData(contentsOfURL: NSURL(string: jsonFilePath)!)!
-        return try! NSJSONSerialization.JSONObjectWithData(data, options:NSJSONReadingOptions.MutableContainers) as! NSMutableDictionary
+        let data = try! Data(contentsOf: URL(string: jsonFilePath)!)
+        return try! JSONSerialization.jsonObject(with: data, options:JSONSerialization.ReadingOptions.mutableContainers) as! NSMutableDictionary
     }
     /* ------------------------------------- */
     func importJSON()
@@ -23,33 +23,33 @@ class JsonManager
         self.jsonParsed = self.parser(self.urlToJsonFile)
     }
     /* ------------------------------------- */
-    func upload(stringToSend: String, urlForAdding: String)
+    func upload(_ stringToSend: String, urlForAdding: String)
     {
-        let url:NSURL = NSURL(string: urlForAdding)!
+        let url:URL = URL(string: urlForAdding)!
         
-        let session = NSURLSession.sharedSession()
+        let session = URLSession.shared
         
-        let request = NSMutableURLRequest(URL: url)
-        request.HTTPMethod = "POST"
-        request.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringCacheData
+        let request = NSMutableURLRequest(url: url)
+        request.httpMethod = "POST"
+        request.cachePolicy = NSURLRequest.CachePolicy.reloadIgnoringCacheData
         
-        let data = stringToSend.dataUsingEncoding(NSUTF8StringEncoding)
+        let data = stringToSend.data(using: String.Encoding.utf8)
         
-        let task = session.uploadTaskWithRequest(request, fromData: data, completionHandler:
+        let task = session.uploadTask(with: request as URLRequest, from: data, completionHandler:
         {(data,response,error) in
-            guard let _:NSData = data, let _:NSURLResponse = response  where error == nil else
+            guard let _:Data = data, let _:URLResponse = response, error == nil else
             {
                 print("error")
                 return
             }
-                _ = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                _ = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
             }
         );
         
         task.resume()
     }
     /* ------------------------------------- */
-    func returnValues(dataIndex: Int) -> [String]
+    func returnValues(_ dataIndex: Int) -> [String]
     {
         var arrayForData: [String] = []
         
@@ -73,7 +73,7 @@ class JsonManager
         return arrayForData
     }
     /* ------------------------------------- */
-    func converJsonToCsv(fieldNamesSeperatedByComas: String) -> String
+    func converJsonToCsv(_ fieldNamesSeperatedByComas: String) -> String
     {
         var CSV: String = "\(fieldNamesSeperatedByComas)\n"
         
@@ -92,22 +92,22 @@ class JsonManager
                 CSV += newString + ","
             }
             
-            CSV = CSV.substringToIndex(CSV.endIndex.predecessor())
+            CSV = CSV.substring(to: CSV.characters.index(before: CSV.endIndex))
             CSV += "\n"
         }
         
-        return CSV.substringToIndex(CSV.endIndex.predecessor())
+        return CSV.substring(to: CSV.characters.index(before: CSV.endIndex))
     }
     /* ------------------------------------- */
-    func filter(index: Int, title: String) -> String
+    func filter(_ index: Int, title: String) -> String
     {
         var strToDisplay = "\(title) :\n"
         
         for (_, b) in self.jsonParsed
         {
-            if (b.objectAtIndex(index) as! String) != ""
+            if (b as AnyObject)[index] as! String != ""
             {
-                strToDisplay += "\t. \(b.objectAtIndex(index) as! String)\n"
+                strToDisplay += "\t. \((b as AnyObject)[index] as! String)\n"
             }
         }
         

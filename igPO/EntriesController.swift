@@ -30,15 +30,15 @@ class EntriesController: UIViewController
         super.didReceiveMemoryWarning()
     }
     /* ---------------------------------------*/
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        tableView.backgroundColor = UIColor.clearColor()
+        tableView.backgroundColor = UIColor.clear
         return self.names.count
     }
     /* ---------------------------------------*/
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell
     {
-        let cell:UITableViewCell = (self.theTableView.dequeueReusableCellWithIdentifier("po")! as UITableViewCell)
+        let cell:UITableViewCell = (self.theTableView.dequeueReusableCell(withIdentifier: "po")! as UITableViewCell)
         
         if let theLabel = cell.viewWithTag(200) as? UILabel
         {
@@ -65,31 +65,31 @@ class EntriesController: UIViewController
             theTextView.text = "INTÉRESSÉ PAR LES PROGRAMMES : \n\(self.progs[indexPath.row])"
         }
         
-        cell.textLabel?.textColor = UIColor.whiteColor()
-        cell.backgroundColor = UIColor.clearColor()
+        cell.textLabel?.textColor = UIColor.white
+        cell.backgroundColor = UIColor.clear
         
         return cell
     }
     /* ---------------------------------------*/
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    func tableView(_ tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath)
     {
-        let selectedCell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
-        selectedCell.contentView.backgroundColor = UIColor.lightGrayColor()
+        let selectedCell:UITableViewCell = tableView.cellForRow(at: indexPath)!
+        selectedCell.contentView.backgroundColor = UIColor.lightGray
     }
     /* ---------------------------------------*/
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath)
+    func tableView(_ tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: IndexPath)
     {
-        if editingStyle == UITableViewCellEditingStyle.Delete
+        if editingStyle == UITableViewCellEditingStyle.delete
         {
             self.jsonManager.upload("delete=\(self.names[indexPath.row])", urlForAdding: "http://www.igweb.tv/ig_po/php/delete.php")
             
-            self.names.removeAtIndex(indexPath.row)
-            self.phones.removeAtIndex(indexPath.row)
-            self.emails.removeAtIndex(indexPath.row)
-            self.hows.removeAtIndex(indexPath.row)
-            self.progs.removeAtIndex(indexPath.row)
+            self.names.remove(at: indexPath.row)
+            self.phones.remove(at: indexPath.row)
+            self.emails.remove(at: indexPath.row)
+            self.hows.remove(at: indexPath.row)
+            self.progs.remove(at: indexPath.row)
             
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
         }
     }
     /* ---------------------------------------*/

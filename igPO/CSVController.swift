@@ -22,7 +22,7 @@ class CSVController: UIViewController
         super.didReceiveMemoryWarning()
     }
     /* ---------------------------------------*/
-    @IBAction func buttonsForFiltering(sender: UIButton)
+    @IBAction func buttonsForFiltering(_ sender: UIButton)
     {
         var strToDisplay = ""
         
@@ -46,7 +46,7 @@ class CSVController: UIViewController
         }
     }
     /* ---------------------------------------*/
-    @IBAction func programInterests(sender: UIButton)
+    @IBAction func programInterests(_ sender: UIButton)
     {
         self.listOfSelectedPrograms = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
@@ -67,10 +67,10 @@ class CSVController: UIViewController
         for index in 0 ..< arrProgramNames.count
         {
             let s = ". \(arrProgramNames[index])"
-            
+
             for (_, b) in self.jsonManager.jsonParsed
             {
-                if s == b.objectAtIndex(3) as! String
+                if s == (b as AnyObject).objectAt(3) as! String
                 {
                     self.listOfSelectedPrograms[index] += 1
                 }
@@ -107,7 +107,7 @@ class CSVController: UIViewController
             
             for (_, b) in self.jsonManager.jsonParsed
             {
-                if s == b.objectAtIndex(2) as! String
+                if s == (b as AnyObject).objectAt(2) as! String
                 {
                     self.listOfMedias[index] += 1
                 }
@@ -124,18 +124,18 @@ class CSVController: UIViewController
         self.cvsTextView.text = s
     }
     /* ---------------------------------------*/
-    @IBAction func reset(sender: UIButton)
+    @IBAction func reset(_ sender: UIButton)
     {
-        let refreshAlert = UIAlertController(title: "Réinialisation", message: "Vous voulez vraiment tout réinitialiser?", preferredStyle: UIAlertControllerStyle.Alert)
+        let refreshAlert = UIAlertController(title: "Réinialisation", message: "Vous voulez vraiment tout réinitialiser?", preferredStyle: UIAlertControllerStyle.alert)
         
-        refreshAlert.addAction(UIAlertAction(title: "Oui", style: .Default, handler: { (action: UIAlertAction!) in
+        refreshAlert.addAction(UIAlertAction(title: "Oui", style: .default, handler: { (action: UIAlertAction!) in
             self.reallyDoReset()
         }))
         
-        refreshAlert.addAction(UIAlertAction(title: "Non", style: .Default, handler: { (action: UIAlertAction!) in
+        refreshAlert.addAction(UIAlertAction(title: "Non", style: .default, handler: { (action: UIAlertAction!) in
         }))
         
-        presentViewController(refreshAlert, animated: true, completion: nil)
+        present(refreshAlert, animated: true, completion: nil)
     }
     /* ---------------------------------------*/
     func reallyDoReset()

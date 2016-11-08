@@ -70,9 +70,9 @@ class ViewController: UIViewController
         // Delete 3 last characters of string...
         if stringToReturn != ""
         {
-            stringToReturn = stringToReturn.substringToIndex(stringToReturn.endIndex.predecessor())
-            stringToReturn = stringToReturn.substringToIndex(stringToReturn.endIndex.predecessor())
-            stringToReturn = stringToReturn.substringToIndex(stringToReturn.endIndex.predecessor())
+            stringToReturn = stringToReturn.substring(to: stringToReturn.characters.index(before: stringToReturn.endIndex))
+            stringToReturn = stringToReturn.substring(to: stringToReturn.characters.index(before: stringToReturn.endIndex))
+            stringToReturn = stringToReturn.substring(to: stringToReturn.characters.index(before: stringToReturn.endIndex))
         }
         
         return stringToReturn
@@ -83,18 +83,18 @@ class ViewController: UIViewController
         super.didReceiveMemoryWarning()
     }
     /* ---------------------------------------*/
-    @IBAction func buttonManager(sender: UIButton)
+    @IBAction func buttonManager(_ sender: UIButton)
     {
         let buttonIndexInArray = sender.tag - 100
         
         if !arrForButtonManagement[buttonIndexInArray]
         {
-            sender.setImage(UIImage(named: "case_select.png"), forState: UIControlState.Normal)
+            sender.setImage(UIImage(named: "case_select.png"), for: UIControlState())
             arrForButtonManagement[buttonIndexInArray] = true
         }
         else
         {
-            sender.setImage(UIImage(named: "case.png"), forState: UIControlState.Normal)
+            sender.setImage(UIImage(named: "case.png"), for: UIControlState())
             arrForButtonManagement[buttonIndexInArray] = false
         }
     }
@@ -105,15 +105,15 @@ class ViewController: UIViewController
         {
             arrForButtonManagement[x] = false
             let aButton: UIButton = (view.viewWithTag(100 + x) as? UIButton)!
-            aButton.setImage(UIImage(named: "case.png"), forState: UIControlState.Normal)
+            aButton.setImage(UIImage(named: "case.png"), for: UIControlState())
         }
     }
     /* ---------------------------------------*/
-    @IBAction func saveInformation(sender: UIButton)
+    @IBAction func saveInformation(_ sender: UIButton)
     {
-        if name.text == ""
+        if name.text == "" || phone.text == "" || email.text == ""
         {
-            alert("Veuillez insérer votre nom...")
+            alert("Veuillez ne pas laisser aucun champ vide...")
             return
         }
         
@@ -135,12 +135,12 @@ class ViewController: UIViewController
         alert("Les données ont été sauvegardées...")
     }
     /* ---------------------------------------*/
-    func alert(theMessage: String)
+    func alert(_ theMessage: String)
     {
-        let refreshAlert = UIAlertController(title: "Message...", message: theMessage, preferredStyle: .Alert)
-        let OKAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        let refreshAlert = UIAlertController(title: "Message...", message: theMessage, preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         refreshAlert.addAction(OKAction)
-        presentViewController(refreshAlert, animated: true){}
+        present(refreshAlert, animated: true){}
     }
     /* ---------------------------------------*/
     func clearFields()
@@ -150,13 +150,13 @@ class ViewController: UIViewController
         email.text = ""
     }
     /* ---------------------------------------*/
-    func textFieldShouldReturn(textField: UITextField!) -> Bool
+    func textFieldShouldReturn(_ textField: UITextField!) -> Bool
     {
         textField.resignFirstResponder()
         return true
     }
     /* ---------------------------------------*/
-    @IBAction func mediaButtons(sender: UIButton)
+    @IBAction func mediaButtons(_ sender: UIButton)
     {
         resetAllMediaButtonAlphas()
         
