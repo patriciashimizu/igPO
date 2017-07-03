@@ -81,7 +81,9 @@ class CSVController: UIViewController
         
         for index in 0 ..< arrProgramNames.count
         {
-            s += "\t. \(self.listOfSelectedPrograms[index]) = \(arrProgramNames[index])\n"
+            // . Administrateur → CSV → Programmes
+            //s += "\t. \(self.listOfSelectedPrograms[index]) = \(arrProgramNames[index])\n"
+            s += "\t \(self.listOfSelectedPrograms[index]) = \(arrProgramNames[index])\n"
         }
         
         self.cvsTextView.text = s
@@ -118,7 +120,9 @@ class CSVController: UIViewController
         
         for index in 0 ..< arrMedias.count
         {
-            s += "\t. \(self.listOfMedias[index]) = \(arrMedias[index])\n"
+            // . Administrateur → CSV → Médias
+            //s += "\t. \(self.listOfMedias[index]) = \(arrMedias[index])\n"
+            s += "\t \(self.listOfMedias[index]) = \(arrMedias[index])\n"
         }
         
         self.cvsTextView.text = s
