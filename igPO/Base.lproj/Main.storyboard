@@ -675,7 +675,7 @@
                                 </state>
                                 <connections>
                                     <action selector="bAcceder:" destination="Kbk-j1-NlT" eventType="touchUpInside" id="IxH-Bw-a44"/>
-                                    <segue destination="E6X-9u-UeY" kind="presentation" id="C78-Hh-tJg"/>
+                                    <segue destination="E6X-9u-UeY" kind="presentation" identifier="seg" id="C78-Hh-tJg"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Mp-bp-Z5I">
@@ -1068,7 +1068,7 @@
         <image name="save.png" width="519" height="333"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pCI-A4-hNy"/>
         <segue reference="C78-Hh-tJg"/>
+        <segue reference="pCI-A4-hNy"/>
     </inferredMetricsTieBreakers>
 </document>
