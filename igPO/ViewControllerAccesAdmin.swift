@@ -11,27 +11,27 @@ class ViewControllerAccesAdmin: UIViewController{
     var UtilisateurMotDePasse = [""]
     var defaults = UserDefaults.standard
     var utilisateur: String!
-    var password: String!
+    var motDePasse: String!
     //---------------------
     @IBAction func bAcceder(_ sender: UIButton) {
         
-        if defaults.object(forKey: "SavedDict") == nil {
+        if defaults.object(forKey: "SauverDict") == nil {
             let dictionnaire = [
                 "UTILISATEUR" : aTexteUtilisateur.text!,
                 "MOTDEPASSE" : aTexteMotDePasse.text!
             ]
-            defaults.set(dictionnaire, forKey: "SavedDict")
-            for (key, value) in dictionnaire.reversed() {
+            defaults.set(dictionnaire, forKey: "SauverDict")
+            /*for (key, value) in dictionnaire.reversed() {
                 print ("\(key) -> \(value)")
-            }
+            }*/
         }
         else {
-            let dict = defaults.object(forKey: "SavedDict") as? [String: String] ?? [String: String]()
+            let dict = defaults.object(forKey: "SauverDict") as? [String: String] ?? [String: String]()
             
             
-            for (key, value) in dict.reversed() {
+            /*for (key, value) in dict.reversed() {
                 print ("DICT: " + "\(key) -> \(value)")
-            }
+            }*/
 
             
             for (key, value) in dict.reversed() {
@@ -39,14 +39,14 @@ class ViewControllerAccesAdmin: UIViewController{
                     utilisateur = value
                 }
                 else{
-                    password = value
+                    motDePasse = value
                 }
                 
             }
 
             
             
-            if password == aTexteMotDePasse.text && utilisateur == aTexteUtilisateur.text{
+            if motDePasse == aTexteMotDePasse.text && utilisateur == aTexteUtilisateur.text{
                 performSegue(withIdentifier: "seg", sender: nil)
             }
             else{
@@ -60,9 +60,8 @@ class ViewControllerAccesAdmin: UIViewController{
         //---------------------
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        //defaults.removeObject(forKey: "SavedDict")
+
+        //defaults.removeObject(forKey: "SauverDict")
         
         montrerMessageEtBouton()
         
@@ -70,13 +69,13 @@ class ViewControllerAccesAdmin: UIViewController{
     
     //---------------------
     func montrerMessageEtBouton(){
-        if defaults.object(forKey: "SavedDict") == nil{             aLabelMessage.text = "CREATE PASSWORD"
-            aButtonAcceder.setTitle("CREATE", for: .normal)
+        if defaults.object(forKey: "SauverDict") == nil{             aLabelMessage.text = "CRÉER LE MOT DE PASSE"
+            aButtonAcceder.setTitle("CREER", for: .normal)
 
         }
         else {
-            aLabelMessage.text = "INSERT PASSWORD"
-            aButtonAcceder.setTitle("INSERT", for: .normal)
+            aLabelMessage.text = "SE CONNECTER"
+            aButtonAcceder.setTitle("CONNECTER", for: .normal)
             aTexteMotDePasse.text = ""
             aTexteMotDePasse.isSecureTextEntry = true
             
