@@ -1,5 +1,6 @@
+//============================================================
 import UIKit
-
+//============================================================
 class ViewControllerAccesAdmin: UIViewController{
     
     @IBOutlet weak var aLabelMessage: UILabel!
@@ -7,12 +8,12 @@ class ViewControllerAccesAdmin: UIViewController{
     @IBOutlet weak var aTexteMotDePasse: UITextField!
     @IBOutlet weak var aButtonAcceder: UIButton!
     
-    //---------------------
+    //------------------------------
     var UtilisateurMotDePasse = [""]
     var defaults = UserDefaults.standard
     var utilisateur: String!
     var motDePasse: String!
-    //---------------------
+    //------------------------------
     @IBAction func bAcceder(_ sender: UIButton) {
         
         if defaults.object(forKey: "SauverDict") == nil {
@@ -21,18 +22,9 @@ class ViewControllerAccesAdmin: UIViewController{
                 "MOTDEPASSE" : aTexteMotDePasse.text!
             ]
             defaults.set(dictionnaire, forKey: "SauverDict")
-            /*for (key, value) in dictionnaire.reversed() {
-                print ("\(key) -> \(value)")
-            }*/
         }
         else {
             let dict = defaults.object(forKey: "SauverDict") as? [String: String] ?? [String: String]()
-            
-            
-            /*for (key, value) in dict.reversed() {
-                print ("DICT: " + "\(key) -> \(value)")
-            }*/
-
             
             for (key, value) in dict.reversed() {
                 if key == "UTILISATEUR" {
@@ -43,9 +35,7 @@ class ViewControllerAccesAdmin: UIViewController{
                 }
                 
             }
-
-            
-            
+           
             if motDePasse == aTexteMotDePasse.text && utilisateur == aTexteUtilisateur.text{
                 performSegue(withIdentifier: "seg", sender: nil)
             }
@@ -57,7 +47,7 @@ class ViewControllerAccesAdmin: UIViewController{
         }
       }
  
-        //---------------------
+    //------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -67,10 +57,10 @@ class ViewControllerAccesAdmin: UIViewController{
         
     }
     
-    //---------------------
+    //------------------------------
     func montrerMessageEtBouton(){
-        if defaults.object(forKey: "SauverDict") == nil{             aLabelMessage.text = "CRÉER LE MOT DE PASSE"
-            aButtonAcceder.setTitle("CREER", for: .normal)
+        if defaults.object(forKey: "SauverDict") == nil{             aLabelMessage.text = "S'INSCRIRE"
+            aButtonAcceder.setTitle("SAUVEGARDER", for: .normal)
 
         }
         else {
@@ -81,5 +71,7 @@ class ViewControllerAccesAdmin: UIViewController{
             
         }
     }
+    //------------------------------
    
 }
+//============================================================

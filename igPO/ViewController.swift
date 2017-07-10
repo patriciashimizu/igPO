@@ -55,6 +55,12 @@ class ViewController: UIViewController
         }
     }
     /* ---------------------------------------*/
+    // ***** manageSelectedPrograms
+    /*
+     *  Fait la mise en forme du nom du programme avec un point « . »
+     *
+     *  @return stringToReturn: le nom du programme avec un point au début
+     */
     func manageSelectedPrograms() -> String
     {
         var stringToReturn: String = ". "
@@ -99,6 +105,11 @@ class ViewController: UIViewController
         }
     }
     /* ---------------------------------------*/
+    // ***** Fonction deselectAllButtons
+    /*
+     *  Désélectionne  les programmes que l’utilisateur a été choisi
+     *
+     */
     func deselectAllButtons()
     {
         for x in 0 ..< arrForButtonManagement.count
@@ -109,6 +120,12 @@ class ViewController: UIViewController
         }
     }
     /* ---------------------------------------*/
+    // ***** Fonction saveInformation
+    /*
+     *  Garde les informations rentrées/sélectionnées par l’utilisateur 
+     *  dans la base de données
+     *
+     */
     @IBAction func saveInformation(_ sender: UIButton)
     {
         if name.text == "" || phone.text == "" || email.text == ""
@@ -135,6 +152,12 @@ class ViewController: UIViewController
         alert("Les données ont été sauvegardées...")
     }
     /* ---------------------------------------*/
+    // ***** Fonction alert
+    /*
+     *  Crée la fenêtre de « pop-up » avec le message approprié
+     *
+     *  @param: le message à être affiché
+     */
     func alert(_ theMessage: String)
     {
         let refreshAlert = UIAlertController(title: "Message...", message: theMessage, preferredStyle: .alert)
@@ -143,6 +166,11 @@ class ViewController: UIViewController
         present(refreshAlert, animated: true){}
     }
     /* ---------------------------------------*/
+    // ***** Fonction clearFields
+    /*
+     *  Vide les champs « nom, téléphone, courriel »
+     *
+     */
     func clearFields()
     {
         name.text = ""
@@ -156,6 +184,12 @@ class ViewController: UIViewController
         return true
     }
     /* ---------------------------------------*/
+    // ***** Fonction mediaButtons
+    /*
+     *  Vérifie lequel bouton a été sélectionné par l’utilisateur en mettant
+     *  la couleur du bouton plus forte
+     *
+     */
     @IBAction func mediaButtons(_ sender: UIButton)
     {
         resetAllMediaButtonAlphas()
@@ -172,6 +206,12 @@ class ViewController: UIViewController
         }
     }
     /* ---------------------------------------*/
+    // ***** Fonction resetAllMediaButtonAlphas
+    /*
+     *  Désélectionne  le média que l’utilisateur a été choisi en mettant 
+     *  la couleur des boutons plus clairs
+     *
+     */
     func resetAllMediaButtonAlphas()
     {
         for index in 0 ..< arrMediaButtons.count
@@ -180,6 +220,13 @@ class ViewController: UIViewController
         }
     }
     /* ---------------------------------------*/
+    // ***** Fonction checkMediaSelection
+    /*
+     *  Vérifie si le média est sélectionné
+     *  
+     *  @return true si il y a au moins un média sélectionné, ou faux si non
+     *
+     */
     func checkMediaSelection() -> Bool
     {
         var chosen = false

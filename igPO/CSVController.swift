@@ -130,7 +130,7 @@ class CSVController: UIViewController
     /* ---------------------------------------*/
     @IBAction func reset(_ sender: UIButton)
     {
-        let refreshAlert = UIAlertController(title: "Réinialisation", message: "Vous voulez vraiment tout réinitialiser?", preferredStyle: UIAlertControllerStyle.alert)
+        let refreshAlert = UIAlertController(title: "Réinialisation", message: "Vous voulez vraiment effacer toutes les données?", preferredStyle: UIAlertControllerStyle.alert)
         
         refreshAlert.addAction(UIAlertAction(title: "Oui", style: .default, handler: { (action: UIAlertAction!) in
             self.reallyDoReset()
