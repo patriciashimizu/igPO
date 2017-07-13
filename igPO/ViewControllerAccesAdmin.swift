@@ -1,3 +1,8 @@
+/*
+ *   Pour accéder l’écran des rapports (administrateur) :
+ *   Utilisateur : adm
+ *   Mot de passe : adm123
+ */
 //============================================================
 import UIKit
 //============================================================
@@ -56,7 +61,7 @@ class ViewControllerAccesAdmin: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Pour réinitialiser l’utilisateur et mot de passe qui sont déjà crées, il faut enlever le commentaire de la ligne 60 (en bas)
+        // Pour réinitialiser l’utilisateur et mot de passe qui sont déjà crées, il faut enlever le commentaire de la ligne 65 (en bas)
         //defaults.removeObject(forKey: "SauverDict")
         
         montrerMessageEtBouton()

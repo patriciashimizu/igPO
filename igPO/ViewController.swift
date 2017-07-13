@@ -1,3 +1,9 @@
+/*
+*   Pour accéder l’écran des rapports (administrateur) :
+*   Utilisateur : adm
+*   Mot de passe : adm123
+*/
+
 //=================================
 import UIKit
 //=================================
@@ -89,6 +95,11 @@ class ViewController: UIViewController
         super.didReceiveMemoryWarning()
     }
     /* ---------------------------------------*/
+    // ***** Fonction buttonManager
+    /*
+     *  Change l’image des programmes qui sont cochés par l’utilisateur
+     *
+     */
     @IBAction func buttonManager(_ sender: UIButton)
     {
         let buttonIndexInArray = sender.tag - 100
