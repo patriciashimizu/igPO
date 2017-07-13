@@ -14,6 +14,12 @@ class ViewControllerAccesAdmin: UIViewController{
     var utilisateur: String!
     var motDePasse: String!
     //------------------------------
+    // ***** Bouton bAcceder
+    /*
+     *  Fait la validation de l’utilisateur et mot de passe pour y accéder 
+     *  la page d’administrateur
+     *
+     */
     @IBAction func bAcceder(_ sender: UIButton) {
         
         if defaults.object(forKey: "SauverDict") == nil {
@@ -58,6 +64,12 @@ class ViewControllerAccesAdmin: UIViewController{
     }
     
     //------------------------------
+    // ***** Fonction montrerMessageEtBouton
+    /*
+     *  Change le nom du bouton et le message du Label en accordance 
+     *  si il y a un utilisateur et mot de passe qui sont déjà crées
+     *
+     */
     func montrerMessageEtBouton(){
         if defaults.object(forKey: "SauverDict") == nil{             aLabelMessage.text = "S'INSCRIRE"
             aButtonAcceder.setTitle("SAUVEGARDER", for: .normal)

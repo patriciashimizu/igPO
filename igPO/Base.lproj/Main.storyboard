@@ -17,6 +17,9 @@
         <array key="cordiab.ttf">
             <string>CordiaNew-Bold</string>
         </array>
+        <array key="cordiai.ttf">
+            <string>CordiaNew-Italic</string>
+        </array>
     </customFonts>
     <scenes>
         <!--View Controller-->
@@ -644,7 +647,7 @@
                                     <constraint firstAttribute="height" constant="30" id="27Q-T7-0L1"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="CordiaNew-Italic" family="Cordia New" pointSize="25"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UE7-8w-Gjg">
@@ -664,7 +667,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="kVf-pG-MUe"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="CordiaNew" family="Cordia New" pointSize="35"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -674,7 +677,7 @@
                                     <constraint firstAttribute="height" constant="30" id="WFe-bO-CMh"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="CordiaNew-Italic" family="Cordia New" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obD-Fe-J0l">
@@ -684,7 +687,7 @@
                                     <constraint firstAttribute="width" constant="206" id="Hcq-7g-nsn"/>
                                     <constraint firstAttribute="height" constant="54" id="r4K-eK-cr8"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="CordiaNew" family="Cordia New" pointSize="30"/>
                                 <state key="normal" title="BUTTON">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -755,7 +758,7 @@
                                         <rect key="frame" x="0.0" y="28" width="688" height="173"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Y3d-HY-Dim" id="Tbv-lJ-ZGt">
-                                            <rect key="frame" x="0.0" y="0.0" width="688" height="172.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="688" height="172"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="200" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GrI-k2-lpJ">
@@ -922,7 +925,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2O3-Pk-Knj">
-                                <rect key="frame" x="567" y="936" width="172" height="30"/>
+                                <rect key="frame" x="568" y="936" width="173" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="oqV-Yf-Zqq"/>
@@ -936,7 +939,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFW-dX-Ube">
-                                <rect key="frame" x="567" y="973" width="172" height="32"/>
+                                <rect key="frame" x="568" y="973" width="173" height="32"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="oXU-Kb-KxN"/>
@@ -957,7 +960,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vNl-lP-xah">
-                                <rect key="frame" x="387" y="936" width="172" height="30"/>
+                                <rect key="frame" x="387" y="936" width="173" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="756-tB-ufp"/>
@@ -971,7 +974,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6f-vD-36q">
-                                <rect key="frame" x="387" y="974" width="172" height="30"/>
+                                <rect key="frame" x="387" y="974" width="173" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="0uz-8A-auu"/>
@@ -985,7 +988,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsC-Tb-z32">
-                                <rect key="frame" x="206" y="974" width="172" height="30"/>
+                                <rect key="frame" x="205" y="974" width="173" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="ltp-LJ-wPP"/>
@@ -999,7 +1002,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edY-Nk-OUC">
-                                <rect key="frame" x="26" y="936" width="172" height="68"/>
+                                <rect key="frame" x="24" y="936" width="173" height="68"/>
                                 <color key="backgroundColor" red="0.74901960779999999" green="0.16078431369999999" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="68" id="UWn-pa-Q0i"/>
@@ -1013,7 +1016,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwr-s0-uMd">
-                                <rect key="frame" x="206" y="936" width="172" height="30"/>
+                                <rect key="frame" x="205" y="936" width="173" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="anv-G5-3im"/>
@@ -1038,7 +1041,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="NRh-iM-N7c" kind="presentation" id="h68-o0-Bhs"/>
+                                    <segue destination="NRh-iM-N7c" kind="presentation" id="MwE-hH-wjZ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1089,10 +1092,10 @@
             </objects>
             <point key="canvasLocation" x="1368.75" y="256.640625"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller Aide-->
         <scene sceneID="wxt-aT-Fbl">
             <objects>
-                <viewController id="NRh-iM-N7c" sceneMemberID="viewController">
+                <viewController id="NRh-iM-N7c" customClass="ViewControllerAide" customModule="igPO" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1rt-3E-Dba"/>
                         <viewControllerLayoutGuide type="bottom" id="G7D-wr-ntk"/>
@@ -1115,34 +1118,57 @@
                                     <segue destination="fEO-y0-p40" kind="presentation" id="D7y-Kv-KU6"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4Kk-Hc-rwl">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="4Kk-Hc-rwl">
                                 <rect key="frame" x="34" y="96" width="700" height="839"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="700" id="wRy-mJ-77I"/>
                                 </constraints>
-                                <string key="text">Pour que les données soient disponibles dans un ordinateur, veuillez suivre les pas suivants:
-•	Souris : click droit → « Select All »
-•	Souris : click droit → « Copy»
-•	Ouvrir le Safari
-•	Connecter  dans votre adresse courriel (Gmail, Hotmail, etc.)
-•	Ouvrir un nouveau message
-•	Souris : click droit → « Paste»
-•	Sauvegarder le message
-
-Après suivre la procédure,  vous pourrez accéder votre adresse courriel dans un ordinateur, copier les données, et  coller dans un logiciel qui permet de mieux travailler les informations (par exemple, l’Excel ou le Numbers)</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <mutableString key="text">Pour que les données soient disponibles dans un ordinateur, veuillez suivre les étapes suivantes:•	Toucher l’écran jusqu’à ce que le message pour sélectionner les données apparait  •	Faire la copie de toutes les données : « Select All » → « Copy»•	Ouvrir le Safari•	Accéder à votre adresse courriel (Gmail, Hotmail, etc.)•	Ouvrir un nouveau message•	Toucher l’écran jusqu’à ce que le message pour coller les données apparaît•	Faire le procès de coller les données : « Paste »•	Sauvegarder le messageAprès avoir suivi la procédure,  vous pourrez accéder à votre adresse courriel dans un ordinateur, copier les données, et coller celle-ci dans un logiciel qui permet de mieux travailler les informations (par exemple, l’Excel ou le Numbers)</mutableString>
+                                <fontDescription key="fontDescription" name="CordiaNew" family="Cordia New" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ve4-Ia-z3U">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo2.png" translatesAutoresizingMaskIntoConstraints="NO" id="DhI-W2-apO">
+                                <rect key="frame" x="339" y="25" width="91" height="63"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63" id="0Er-Pu-Ncf"/>
+                                    <constraint firstAttribute="width" constant="91" id="ZX4-Re-DqK"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f02-W9-Rzn">
+                                <rect key="frame" x="287" y="579" width="194" height="50"/>
+                                <color key="backgroundColor" red="0.74901960779999999" green="0.16078431369999999" blue="0.16862745100000001" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="194" id="FAm-gw-fBn"/>
+                                    <constraint firstAttribute="height" constant="50" id="yg2-JP-OEh"/>
+                                </constraints>
+                                <state key="normal" title="VOIR VIDEO">
+                                    <color key="titleColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="bAide:" destination="NRh-iM-N7c" eventType="touchUpInside" id="RDU-Qp-rto"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="5C6-QX-zKY" firstAttribute="leading" secondItem="q57-Qr-gcw" secondAttribute="leadingMargin" constant="30" id="2Yv-hz-iQK"/>
+                            <constraint firstItem="DhI-W2-apO" firstAttribute="centerX" secondItem="q57-Qr-gcw" secondAttribute="centerX" id="56B-O6-I1a"/>
+                            <constraint firstItem="f02-W9-Rzn" firstAttribute="top" secondItem="DhI-W2-apO" secondAttribute="bottom" constant="491" id="8ne-XW-xP2"/>
+                            <constraint firstItem="f02-W9-Rzn" firstAttribute="centerX" secondItem="q57-Qr-gcw" secondAttribute="centerX" id="L2n-Wd-sT8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4Kk-Hc-rwl" secondAttribute="trailing" constant="14" id="NDD-Jt-mK5"/>
+                            <constraint firstAttribute="trailing" secondItem="Ve4-Ia-z3U" secondAttribute="trailing" id="RYw-y8-XgN"/>
                             <constraint firstItem="G7D-wr-ntk" firstAttribute="top" secondItem="4Kk-Hc-rwl" secondAttribute="bottom" constant="89" id="YUi-RQ-SGS"/>
                             <constraint firstItem="5C6-QX-zKY" firstAttribute="top" secondItem="1rt-3E-Dba" secondAttribute="bottom" constant="26" id="b4W-CB-Kib"/>
                             <constraint firstItem="4Kk-Hc-rwl" firstAttribute="top" secondItem="5C6-QX-zKY" secondAttribute="bottom" constant="20" id="bTB-6R-VAm"/>
                             <constraint firstItem="4Kk-Hc-rwl" firstAttribute="leading" secondItem="q57-Qr-gcw" secondAttribute="leadingMargin" constant="14" id="ct4-og-llw"/>
+                            <constraint firstItem="Ve4-Ia-z3U" firstAttribute="leading" secondItem="q57-Qr-gcw" secondAttribute="leading" id="fnH-ZE-uRh"/>
+                            <constraint firstItem="G7D-wr-ntk" firstAttribute="top" secondItem="Ve4-Ia-z3U" secondAttribute="bottom" id="jig-kO-xUG"/>
+                            <constraint firstItem="Ve4-Ia-z3U" firstAttribute="top" secondItem="q57-Qr-gcw" secondAttribute="top" id="qJa-Ym-tFa"/>
+                            <constraint firstItem="4Kk-Hc-rwl" firstAttribute="top" secondItem="DhI-W2-apO" secondAttribute="bottom" constant="8" symbolic="YES" id="zsk-In-las"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -1158,8 +1184,8 @@ Après suivre la procédure,  vous pourrez accéder votre adresse courriel dans 
         <image name="new_bg_v2.png" width="768" height="2100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wTJ-KL-nQk"/>
-        <segue reference="34R-z7-7Gr"/>
+        <segue reference="pCI-A4-hNy"/>
         <segue reference="D7y-Kv-KU6"/>
+        <segue reference="34R-z7-7Gr"/>
     </inferredMetricsTieBreakers>
 </document>

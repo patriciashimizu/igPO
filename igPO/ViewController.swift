@@ -55,7 +55,7 @@ class ViewController: UIViewController
         }
     }
     /* ---------------------------------------*/
-    // ***** manageSelectedPrograms
+    // ***** Fonction manageSelectedPrograms
     /*
      *  Fait la mise en forme du nom du programme avec un point « . »
      *
@@ -184,7 +184,7 @@ class ViewController: UIViewController
         return true
     }
     /* ---------------------------------------*/
-    // ***** Fonction mediaButtons
+    // ***** Bouton mediaButtons
     /*
      *  Vérifie lequel bouton a été sélectionné par l’utilisateur en mettant
      *  la couleur du bouton plus forte

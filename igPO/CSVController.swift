@@ -22,6 +22,11 @@ class CSVController: UIViewController
         super.didReceiveMemoryWarning()
     }
     /* ---------------------------------------*/
+    // ***** Boutons buttonsForFiltering
+    /*
+     *  Montre tous les informations qui sont dans la base de données
+     *
+     */
     @IBAction func buttonsForFiltering(_ sender: UIButton)
     {
         var strToDisplay = ""
@@ -46,6 +51,11 @@ class CSVController: UIViewController
         }
     }
     /* ---------------------------------------*/
+    // ***** Boutons programInterests
+    /*
+     *  Montre le rapport des programmes en ordre décroisant qui ont été les plus sélectionnées
+     *
+     */
     @IBAction func programInterests(_ sender: UIButton)
     {
         self.listOfSelectedPrograms = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
@@ -89,6 +99,11 @@ class CSVController: UIViewController
         self.cvsTextView.text = s
     }
     /* ---------------------------------------*/
+    // ***** Fonction mostEfficientMedia
+    /*
+     *  Montre le rapport des médias en ordre décroisant qui ont été les plus sélectionnées
+     *
+     */
     func mostEfficientMedia()
     {
         self.listOfMedias = [0, 0, 0, 0, 0, 0, 0, 0]
@@ -128,6 +143,11 @@ class CSVController: UIViewController
         self.cvsTextView.text = s
     }
     /* ---------------------------------------*/
+    // ***** Bouton reset
+    /*
+     *  Montre un alerte à l’utilisateur si il veut vraiment effacer les données
+     *
+     */
     @IBAction func reset(_ sender: UIButton)
     {
         let refreshAlert = UIAlertController(title: "Réinialisation", message: "Vous voulez vraiment effacer toutes les données?", preferredStyle: UIAlertControllerStyle.alert)
@@ -142,6 +162,11 @@ class CSVController: UIViewController
         present(refreshAlert, animated: true, completion: nil)
     }
     /* ---------------------------------------*/
+    // ***** Fonction reallyDoReset
+    /*
+     * Efface toutes les informations dans la base de données
+     *
+     */
     func reallyDoReset()
     {
         self.jsonManager.upload("delete=reset", urlForAdding: "http://www.igweb.tv/ig_po/php/delete.php")

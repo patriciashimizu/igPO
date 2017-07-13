@@ -36,6 +36,8 @@ class EntriesController: UIViewController
         return self.names.count
     }
     /* ---------------------------------------*/
+    // ***** Methodes UITableViewDelegate, UITableViewDataSource *****
+    
     func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell
     {
         let cell:UITableViewCell = (self.theTableView.dequeueReusableCell(withIdentifier: "po")! as UITableViewCell)
