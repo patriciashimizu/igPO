@@ -2,12 +2,11 @@
 import UIKit
 //============================================================
 class ViewControllerAccesAdmin: UIViewController{
-    
+    //------------------------------
     @IBOutlet weak var aLabelMessage: UILabel!
     @IBOutlet weak var aTexteUtilisateur: UITextField!
     @IBOutlet weak var aTexteMotDePasse: UITextField!
     @IBOutlet weak var aButtonAcceder: UIButton!
-    
     //------------------------------
     var UtilisateurMotDePasse = [""]
     var defaults = UserDefaults.standard
@@ -46,7 +45,7 @@ class ViewControllerAccesAdmin: UIViewController{
                 performSegue(withIdentifier: "seg", sender: nil)
             }
             else{
-                let alert = UIAlertController(title: "Alert", message: "MAUVAISE UTILISATEUR ET/OU MOT DE PASSE", preferredStyle: UIAlertControllerStyle.alert)
+                let alert = UIAlertController(title: "Alert", message: "MAUVAIS UTILISATEUR ET/OU MOT DE PASSE", preferredStyle: UIAlertControllerStyle.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
             }
@@ -57,6 +56,7 @@ class ViewControllerAccesAdmin: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Pour réinitialiser l’utilisateur et mot de passe qui sont déjà crées, il faut enlever le commentaire de la ligne 60 (en bas)
         //defaults.removeObject(forKey: "SauverDict")
         
         montrerMessageEtBouton()
